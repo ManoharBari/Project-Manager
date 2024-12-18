@@ -5,7 +5,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://mongo:WUZJUGtryMkLLTYxqkXabYLJCXDzIEya@mongodb.railway.internal:27017/Project_Manager");
+  await mongoose.connect("mongodb://127.0.0.1:27017/Project_Manager");
 }
 
 module.exports = main;
