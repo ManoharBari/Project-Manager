@@ -15,7 +15,7 @@ app.use("/auth", authRoutes);
 app.use("/project", projectRoutes);
 app.use("/assign", assignmentRoutes);
 
-app.get("/", (req, res) => {
+app.post("/app", (req, res) => {
   res.send(`<h1> I am Working </h1>`);
 });
 
