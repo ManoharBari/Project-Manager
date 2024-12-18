@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const createProject = require("../controller/projectController");
-const getProjects = require("../controller/projectController");
-const updateProject = require("../controller/projectController");
-const deleteProject = require("../controller/projectController");
+const {
+  createProject,
+  getProjects,
+  updateProject,
+  deleteProject,
+} = require("../controller/projectController");
 const Admin = require("../controller/authController");
 const fetchuser = require("../middleware/fetchuser");
 
