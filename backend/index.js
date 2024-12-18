@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const connectDB = require("../db");
-const authRoutes = require("./auth");
-const projectRoutes = require("./project");
-const assignmentRoutes = require("./assignment");
+const connectDB = require("./db");
+const authRoutes = require("./routes/auth");
+const projectRoutes = require("./routes/project");
+const assignmentRoutes = require("./routes/assignment");
 
 app.use(cors());
 app.use(express.json());
@@ -22,3 +22,5 @@ app.get("/", (req, res) => {
 app.listen(8080, () => {
   console.log("app listen on port 8080");
 });
+
+module.exports = app;
