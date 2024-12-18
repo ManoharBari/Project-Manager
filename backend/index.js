@@ -6,13 +6,7 @@ const authRoutes = require("./routes/auth");
 const projectRoutes = require("./routes/project");
 const assignmentRoutes = require("./routes/assignment");
 
-app.use(
-  cors({
-    origin: "*", // Replace with actual frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 connectDB();
