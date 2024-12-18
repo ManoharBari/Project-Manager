@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const connectDB = require("./db");
-const authRoutes = require("./api/auth");
-const projectRoutes = require("./api/project");
-const assignmentRoutes = require("./api/assignment");
+const connectDB = require("../db");
+const authRoutes = require("./auth");
+const projectRoutes = require("./project");
+const assignmentRoutes = require("./assignment");
 
 app.use(cors());
 app.use(express.json());
