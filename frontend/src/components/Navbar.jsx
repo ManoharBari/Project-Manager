@@ -2,14 +2,14 @@ import { LogOut, NotebookPen } from 'lucide-react';
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router'
 import { useNavigate } from 'react-router-dom'
-import { useAlert } from '../context/alerts/alertContext'
-import UserContext from '../context/user/userContext';
+import { useAlert } from '../context/alert/alertContext'
+// import UserContext from '../context/user/userContext';
 import '../styles/navbar.css';
 
 function Navbar() {
     const alert = useAlert()
     const navigate = useNavigate()
-    const { getUser, user } = useContext(UserContext)
+    // const { getUser, user } = useContext(UserContext)
 
     const Logout = () => {
         alert.success("Logout Sucessfully")
@@ -19,15 +19,15 @@ function Navbar() {
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
-            getUser()
+            // getUser()
         }
-    }, [getUser])
+    }, [])
 
     return (
         <>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <Link className="navbar-brand logo" to="/"><NotebookPen size={30} /> Notebook</Link>
+                    <Link className="navbar-brand logo" to="/"><NotebookPen size={30} /> Project Manager</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -37,7 +37,7 @@ function Navbar() {
                         </ul>
 
 
-                        <div>Hi, {user.username}</div>
+                        {/* <div>Hi, {user.username}</div> */}
 
                         {!localStorage.getItem("token") ?
                             <div>
