@@ -10,9 +10,10 @@ const JWT_SECRET = "manoharkale";
 
 // create user using : POST = api/user - No login required
 
-router.post("/sign", (req, res) => {
+router.post("/sign", async (req, res) => {
   try {
-    res.send(`<h1> I am working </h1>`);
+    let user = await User.findOne({ email: req.body.email });
+    res.send(user);
   } catch (error) {
     console.log(error);
   }
