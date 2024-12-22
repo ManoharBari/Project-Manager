@@ -9,16 +9,6 @@ const assignmentRoutes = require("./routes/assignment");
 app.use(cors());
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log(`Request: ${req.method} ${req.path}`);
-  next();
-});
-
-app.use((err, req, res, next) => {
-  console.error("Error occurred:", err.message);
-  res.status(500).json({ error: err.message });
-});
-
 connectDB();
 
 app.use("/auth", authRoutes);

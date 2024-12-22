@@ -10,7 +10,6 @@ async function main() {
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 6000,
     }
   );
 }

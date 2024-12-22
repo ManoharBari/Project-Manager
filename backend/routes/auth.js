@@ -9,23 +9,6 @@ const fetchuser = require("../middleware/fetchuser");
 const JWT_SECRET = "manoharkale";
 
 // create user using : POST = api/user - No login required
-
-router.post("/sign", async (req, res) => {
-  try {
-    let user = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      role: req.body.role,
-    });
-
-    res.send("success");
-    console.log(user);
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 router.post(
   "/signup",
   [
