@@ -13,7 +13,8 @@ const JWT_SECRET = "manoharkale";
 router.post("/sign", async (req, res) => {
   try {
     let user = await User.findOne({ email: req.body.email });
-    res.send(user);
+    res.send("success");
+    console.log(user);
   } catch (error) {
     console.log(error);
   }
