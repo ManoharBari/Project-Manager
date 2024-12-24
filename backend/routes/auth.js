@@ -11,17 +11,8 @@ const JWT_SECRET = "manoharkale";
 // create user using : POST = api/user - No login required
 router.post(
   "/signup",
-  [
-    body("name", "Enter valid name").isLength({ min: 3 }),
-    body("email", "Enter valid email").isEmail(),
-    body("password", "Enter valid password").isLength({ min: 5 }),
-  ],
   // If there are errors, return bad request and errors
   async (req, res) => {
-    const error = validationResult(req);
-    if (!error.isEmpty()) {
-      return res.status(400).json({ errors: error.array() });
-    }
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
