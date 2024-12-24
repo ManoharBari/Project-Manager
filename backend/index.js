@@ -15,8 +15,8 @@ app.use("/auth", authRoutes);
 app.use("/project", projectRoutes);
 app.use("/assign", assignmentRoutes);
 
-app.listen(8080, () => {
-  console.log("app listen on port 8080");
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
 module.exports = app;
