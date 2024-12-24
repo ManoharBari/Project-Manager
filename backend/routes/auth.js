@@ -12,6 +12,12 @@ const JWT_SECRET = "manoharkale";
 router.post(
   "/signup",
   // If there are errors, return bad request and errors
+  [
+    body("name", "Enter valid name").exists(),
+    body("email", "Enter valid email").isEmail(),
+    body("password", "Enter valid password").exists(),
+    body("role", "Enter valid role").exists(),
+  ],
   async (req, res) => {
     try {
       let user = await User.findOne({ email: req.body.email });
