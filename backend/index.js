@@ -15,8 +15,8 @@ app.use("/auth", authRoutes);
 app.use("/project", projectRoutes);
 app.use("/assign", assignmentRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Project Manager Backend Working!");
 });
 
 module.exports = app;
